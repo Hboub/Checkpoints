@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>  
+    <title> Checkpoint HTML and CSS </title>
+    <link rel="stylesheet" type="text/css" href="css/Style.css">
+  </head>
+  <body>
+    <nav>
+      <a href="#About">About</a>
+      <a href="#Work">Work</a>
+      <a href="#Resume">Resume</a>
+      <a href="#Contact">Contact</a>
+    </nav> 
+    <hr>
+    <p align="center">
+      <iframe class="frame" width="560" height="315" src="https://www.youtube.com/embed/q2fIWB8o-bs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </p>
+    <section id="About">
+      <h1 class="head">About</h1>
+        <p class="para">Kaleidoscope est un groupe de rock britannique, originaire de Londres, en Angleterre. Il est mené par Peter Daltrey et Eddy Pumer, et en activité entre 1967 et 19691. Le groupe incorpore des éléments de musique psychédélique à ses paroles2,3. Le groupe est aussi surnommé The Sidekicks, The Key, I Luv Wight et Fairfield Parlour4. </p>
+    </section>
+    <section id="Work">
+          <h1 class="head">Work</h1>
+          <div align="center">
+                      <span style="color: blueviolet" ">Kaleidoscope's studio albums releases</span>
+          </div><br>  
+          <table align="center" style="width:60%;">
+            <tr>
+              <th>Album name</th>
+              <th>Year of release</th> 
+            </tr>
+            <tr>
+              <td>1967</td>
+              <td>Tangerine Dream</td>
+            </tr>
+            <tr>
+              <td>1969</td>
+              <td>Faintly Blowing</td>
+            </tr>
+            <tr>
+              <td>1970</td>
+              <td>White Faced Lady</td>
+            </tr>
+            <tr>
+              <td>1970</td>
+              <td>From home to home</td>
+            </tr>
+            <tr>
+              <td>2003</td>
+              <td>Please Listen to the Pictures</td>
+            </tr>
+          </table>
+    </section> 
+    <section id="Resume">
+          <h1 class="head">Resume</h1>
+
+          <p class="para">Kaleidoscope était un groupe de folk psychédélique américain qui enregistra 4 albums pour Epic Records entre 1966 et 1970.
+            Il ne faut pas les confondre avec le groupe britannique Kaleidoscope qui a ensuite changé de nom en "Fairfield Parlour" pour éviter la confusion avec le groupe américain traité ici. </p>
+            <div align="center">
+              <img alt="Kaleidoscope" src="http://www.progarchives.com/progressive_rock_discography_band/2282.jpg"
+              style="width: 350px; height: 254px;">
+        <img alt="Kaleidoscope relook" src="http://rock6070.e-monsite.com/medias/images/kaleidoscope-relook.jpg" style="width: 350px; height: 254px;">
+            </div>
+    </section>
+    <section id="Contact">
+      <h1 class="head">Contact</h1>
+          <form>
+            <label for="lname">Last name:</label><br>
+          <input type="text" id="lname" name="lname" value="Nom"><br>
+            <label for="fname">First name:</label><br>
+          <input type="text" id="fname" name="fname" value="Prenom"><br>
+            <label for="gender">Gender:</label><br> 
+          <select id="" name="gender">
+            <option value="NULL">choisissez votre sex</option>
+            <option value="male">Homme</option>
+            <option value="female">Femme</option>
+            <option value="none">Don't show</option>
+          </select><br>
+              <label for="phone">Phone number:</label><br>
+          <input type="text" id="phone" name="phone" value="(+216) XX XXX XXX"><br>
+              <button>Submit</button>
+              <button type="reset" value="Reset" onClick="window.location.reload()">Reset</button>
+            </form>
+    </section> 
+  </body>
+  <footer>
+    <hr>
+		<p>This is a footer</p>
+  </footer>
+</html>
