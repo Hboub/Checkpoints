@@ -19,8 +19,7 @@ h1 {
   color: #051d36;
 }
 .shopping-cart {
-  width: 750px;
-
+  width: 850px;
   margin: 80px auto;
   background: #ffffff;
   box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.1);
@@ -170,7 +169,8 @@ input:focus {
 /* Total Price */
 
 /* Total */
-.uprice {
+.uprice,
+.price {
   align-self: center;
   width: 83px;
   margin-bottom: 11px;
