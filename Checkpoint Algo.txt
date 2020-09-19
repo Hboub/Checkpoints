@@ -1,8 +1,11 @@
 algo count
+
 var
 	a,b,c,d,i:int
 	s:string
+	
 begin
+
 	while(s='')repeat{
 	write("give me the sentence")
 	read(s)
@@ -17,10 +20,14 @@ begin
 			a++
 		else
 			c++
+		end if
 		if(s[i]==a or s[i]==e or s[i]==y or s[i]==i or s[i]==o or s[i]==u)
 			b++
+		end if
 	}
 	write(The length of the sentence with counting spaces is:",d)
 	write(The length of the sentence without counting spaces is:",a)
 	write(The number of words in the sentence is:",c)
 	write(The number of vowels in the sentence is:",b)
+	
+end
