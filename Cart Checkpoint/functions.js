@@ -16,8 +16,8 @@ $(".minus-btn").on("click", function (e) {
   }
 
   $input.val(value);
-  $this=$(this).parent()
-  sumitem($this)
+  $this = $(this).parent();
+  sumitem($this);
   TotalItem();
 });
 
@@ -36,8 +36,8 @@ $(".plus-btn").on("click", function (e) {
   }
 
   $input.val(value);
-  $this=$(this).parent()
-  sumitem($this)
+  $this = $(this).parent();
+  sumitem($this);
   TotalItem();
 });
 
@@ -56,48 +56,45 @@ $(".delete-btn").on("click", function () {
 
 //sum item
 
-// $('.plus-btn').on('click', 
+// $('.plus-btn').on('click',
 function sumitem(a) {
-    
-    var $this = a;
-  
-    var uprice = parseInt($this.siblings(".uprice").text().substring(1));
-    console.log(uprice)
+  var $this = a;
 
-    var input = $this.closest('div').find('input');
-    var value = parseInt(input.val());
-     console.log(value)
-     console.log(input)
+  var uprice = parseInt($this.siblings(".uprice").text().substring(1));
+  console.log(uprice);
 
+  var input = $this.closest("div").find("input");
+  var value = parseInt(input.val());
+  console.log(value);
+  console.log(input);
 
-    //  var price = $this.siblings(".price");
-     price=value*uprice
-    console.log(typeof(price))
-    console.log(price)
+  //  var price = $this.siblings(".price");
+  price = value * uprice;
+  console.log(typeof price);
+  console.log(price);
 
-    // $this.siblings(".price").val()=price
-    $this.siblings(".price").text(price)
-    console.log($this.siblings(".price"))
-
-};
+  // $this.siblings(".price").val()=price
+  $this.siblings(".price").text(price);
+  console.log($this.siblings(".price"));
+}
 
 //sum items
 
 function TotalItem() {
-    
   var arr = document.getElementsByName("name");
 
   var scale = document.getElementsByName("uprice");
 
-  var all = document.getElementsByName('price')
+  var all = document.getElementsByName("price");
 
   var tot = 0;
   for (var i = 0; i < arr.length; i++) {
-    if (arr[i].value != ""&&scale[i].getAttribute("value")!= "") {
+    if (arr[i].value != "" && scale[i].getAttribute("value") != "") {
       tot += parseInt(arr[i].value) * parseInt(scale[i].getAttribute("value"));
-      all[i].innerHTML="$" +parseInt(arr[i].value) * parseInt(scale[i].getAttribute("value"))
+      all[i].innerHTML =
+        "$" + parseInt(arr[i].value) * parseInt(scale[i].getAttribute("value"));
     }
   }
-  console.log(all[1].innerHTML)
-   document.getElementById("total-price").innerHTML ="$" + tot;
+  console.log(all[1].innerHTML);
+  document.getElementById("total-price").innerHTML = "$" + tot;
 }
