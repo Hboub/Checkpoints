@@ -14,20 +14,21 @@ begin
 	a=0
 	b=0
 	c=1
+	d=0
 	for(i=0,i<s.length,i++){
-		d++
+		a++
 		if(s[i]!=' ')
-			a++
+			b++
 		else
 			c++
 		end if
 		if(s[i]=='a' or s[i]=='e' or s[i]=='i' or s[i]=='o' or s[i]=='u' or s[i]=='y')
-			b++
+			d++
 		end if
 	}
-	write(The length of the sentence with counting spaces is:",d)
-	write(The length of the sentence without counting spaces is:",a)
+	write(The length of the sentence with counting spaces is:",a)
+	write(The length of the sentence without counting spaces is:",b)
 	write(The number of words in the sentence is:",c)
-	write(The number of vowels in the sentence is:",b)
+	write(The number of vowels in the sentence is:",d)
 	
 end
