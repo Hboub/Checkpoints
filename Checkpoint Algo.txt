@@ -21,7 +21,7 @@ begin
 		else
 			c++
 		end if
-		if(s[i]==a or s[i]==e or s[i]==y or s[i]==i or s[i]==o or s[i]==u)
+		if(s[i]=='a' or s[i]=='e' or s[i]=='i' or s[i]=='o' or s[i]=='u' or s[i]=='y')
 			b++
 		end if
 	}
