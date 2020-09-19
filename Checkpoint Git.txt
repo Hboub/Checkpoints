@@ -1,0 +1,90 @@
+//Create a folder called learn_git_again.
+
+mkdir learn_git_again
+
+//cd into the learn_git_again folder.
+
+cd C:\Users\Hbob\Desktop\learn_git_again
+
+//Create a file called third.txt.
+
+notepad third.txt 
+then clic yes
+
+//Initialize an empty git repository. 
+
+	git init
+
+//Add third.txt to the staging area. 
+
+	git add third.txt
+
+//Commit with the message "adding third.txt". 
+
+	git commit -m "adding third.txt"
+
+//Check out your commit with git log. 
+
+	git log
+
+//Create another file called fourth.txt. 
+
+	notepad fourth.txt 
+	then clic yes
+
+//Add fourth.txt to the staging area.
+
+	git add fourth.txt
+
+//Commit with the message "adding fourth.txt" 
+
+	git commit -m "adding fourth.txt"
+
+//Remove the third.txt file 
+
+	git rm third.txt (to delete locally too)
+
+	git rm --cached third.txt (to remove tracking only)
+
+//Add this change to the staging area.
+
+	git add *
+	
+//Commit with the message "removing third.txt".
+
+	git commit -m "removing third.txt"
+	
+//Check out your commits using git log.
+
+	git log
+	
+//Change your global setting to core.pager=cat.
+
+	git config --global core.pager 'cat'
+
+//Write the command to list all the global configurations for git on your machine.
+
+	git config --list
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
