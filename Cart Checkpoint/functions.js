@@ -48,7 +48,6 @@ $(".like-btn").on("click", function () {
 //delete
 
 $(".delete-btn").on("click", function () {
-  console.log("I'm heeeeeeeeeere");
   $(this).parent().parent().remove();
 
   TotalItem();
@@ -61,21 +60,15 @@ function sumitem(a) {
   var $this = a;
 
   var uprice = parseInt($this.siblings(".uprice").text().substring(1));
-  console.log(uprice);
 
   var input = $this.closest("div").find("input");
   var value = parseInt(input.val());
-  console.log(value);
-  console.log(input);
 
   //  var price = $this.siblings(".price");
   price = value * uprice;
-  console.log(typeof price);
-  console.log(price);
 
   // $this.siblings(".price").val()=price
   $this.siblings(".price").text(price);
-  console.log($this.siblings(".price"));
 }
 
 //sum items
@@ -95,6 +88,5 @@ function TotalItem() {
         "$" + parseInt(arr[i].value) * parseInt(scale[i].getAttribute("value"));
     }
   }
-  console.log(all[1].innerHTML);
   document.getElementById("total-price").innerHTML = "$" + tot;
 }
