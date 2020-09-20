@@ -6,7 +6,7 @@ var
 	
 begin
 
-	while(s='' or s[s.length-1]!='.') repeat{
+	while(s='' and s[s.length-1]!='.') repeat{
 	write("give me the sentence")
 	read(s)
 	}
