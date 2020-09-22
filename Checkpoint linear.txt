@@ -1,0 +1,108 @@
+//problem 1 sol 1
+set1=[3, 1, 7, 9]
+set2=[2, 4, 1, 9, 3]
+set=[]
+sum=0
+for (let i=0; i < set1.length; i++) {
+k=0
+  for (let j=0; j < set2.length; j++) {
+    if(set1[i]===set2[j])
+    k++
+  }
+  if(k===0)
+    set.push(set1[i])
+}
+for (let i=0; i < set2.length; i++) {
+k=0
+  for (let j=0; j < set1.length; j++) {
+    if(set2[i]===set1[j])
+    k++
+  }
+  if(k===0)
+    set.push(set2[i])
+}
+
+for (const el of set) {
+  sum+=el
+}
+console.log(set)
+console.log(sum)
+
+
+
+
+//problem 1 sol 2
+
+set1=[12, 13, 6, 10]
+set2=[13, 10, 16, 15]
+set={}
+s={}
+sum=0;
+k=set1.length
+for (i=0; i < set1.length; i++) {
+  set[i]=set1[i]
+}
+for (i=0; i < set2.length; i++) {
+  set[k + i]=set2[i]
+}
+
+l=0
+
+for (let i=0; i < Object.values(set).length; i++) {
+  k=0
+ 
+  for (let j=0; j < Object.values(set).length; j++) {
+    if(set[i]===set[j]&&i!=j) 
+    k++
+    
+  }
+  if(k===0){
+    s[l]=set[i]
+    l++
+  }
+}
+for (el of Object.values(s)) {
+  sum+=el
+}
+console.log(s)
+console.log(sum)
+
+
+//problem 2 sol 1
+
+set1=[12, 13, 6, 10]
+set2=[13, 10, 16, 15]
+set=[]
+sum=0
+for (let i=0; i < set1.length; i++) {
+  for (let j=0; j < set2.length; j++) {
+    if(set1[i]===set2[j])
+    set.push(set1[i])
+  }
+}
+for (const com of set) {
+  sum+=com*2
+}
+console.log(set)
+console.log(sum)
+
+
+//problem 2 sol 2
+
+set1=[12, 13, 6, 10]
+set2=[13, 10, 16, 15]
+set={}
+sum=0
+k=0
+for (let i=0; i < set1.length; i++) {
+  for (let j=0; j < set2.length; j++) {
+    if(set1[i]===set2[j])
+      set[k]=set1[i]
+}
+k++
+}
+for (el of Object.values(set)) {
+  sum+=el*2
+}
+console.log(Object.values(set))
+console.log(sum)
