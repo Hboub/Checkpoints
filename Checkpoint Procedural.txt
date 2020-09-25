@@ -1,31 +1,33 @@
-//procedure
-PROCEDURE dot_product(var v,u: ARRAY_OF int,ps:int)
+//Procedure
+
+PROCEDURE dot_product(var v,u: ARRAY_OF int,VAR ps:int)
 VAR
     i:int
 BEGIN
-    IF (v.length != u.length) THEN
-        ps=null
-    ELSE
-        ps=0
-        FOR i FROM 0 TO v.length STEP 1  DO
-            ps += v[i] * u[i]
-        END_FOR
-    END_IF
+    ps=0
+    FOR i FROM 0 TO v.length STEP 1  DO
+        ps += v[i] * u[i]
+    END_FOR
 END
 
-//algorithm
+//Algorithm
+
 ALGORITHM main1
 VAR
     pair:STRUCT
         v :ARRAY_OF int;
         u :ARRAY_OF int;
     END_STRUCT
-    ps,i:int
+    ps,n,m,i,j:int
     v,u :ARRAY_OF int;
-    arr :ARRAY_OF pair[10];
+    arr :ARRAY_OF pair;
 BEGIN
-    FOR j FROM 0 TO 10 STEP 1  DO
-        FOR i FROM 0 TO 3 STEP 1  DO
+    write('the length of vectors')
+    read(n)
+    write('the number of pairs of vectors')
+    read(m)
+    FOR j FROM 0 TO m STEP 1  DO
+        FOR i FROM 0 TO n STEP 1  DO
             write('value number '+i +'of u')
             read(u[i])
             write('value number '+i +'of v')
@@ -34,31 +36,30 @@ BEGIN
         arr[j].u=u
         arr[j].v=v
     END_FOR
-    FOR i FROM 0 TO 10 STEP 1  DO
+    FOR i FROM 0 TO m STEP 1  DO
+        IF (arr[i].v.length != arr[i].u.length) THEN
+            write(i+":can't find product: arrays have different lengths")
+        ELSE
         dot_product(arr[i].u,arr[i].v)
         IF (ps===0) THEN
-            write(i+":        they are orthogonals")
-        ELSE_IF(ps==null) THEN
-            write(i+":        can't find product: arrays have different lengths")
+            write(i+":they are orthogonals")
         ELSE
-            write(i+":        "+ps)
+            write(i+":"+ps)
         END_IF
     END_FOR
 END
 
 //Function
-FUNCTION dot_product(var v,u:array) : int
+
+FUNCTION dot_product(var v,u:ARRAY_OF int) : int
 VAR
     scal,i:int
 BEGIN
-    IF (v.length != u.length) THEN
-        return (null)
-    ELSE
+        scal=0
         FOR i FROM 0 TO v.length STEP 1  DO
             scal += v[i] * u[i]
         END_FOR
         return scal
-    END_IF
 END
 
 ALGORITHM main2
@@ -69,10 +70,10 @@ VAR
     END_STRUCT
     ps,i:int
     v,u :ARRAY_OF int;
-    arr :ARRAY_OF pair[10];
+    arr :ARRAY_OF pair;
 BEGIN
-    FOR j FROM 0 TO 10 STEP 1  DO
-        FOR i FROM 0 TO 3 STEP 1  DO
+    FOR j FROM 0 TO m STEP 1  DO
+        FOR i FROM 0 TO n STEP 1  DO
             write('value number '+i+'of u')
             read(u[i])
             write('value number '+i+'of v')
@@ -81,14 +82,16 @@ BEGIN
         arr[j].u=u
         arr[j].v=v
     END_FOR
-    FOR i FROM 0 TO 10 STEP 1  DO
+    FOR i FROM 0 TO m STEP 1  DO
+    IF (arr[i].v.length != arr[i].u.length) THEN
+         write(i+":can't find product: arrays have different lengths")
+    ELSE
         ps=dot_product(arr[i].u,arr[i].v)
         IF (ps===0) THEN
-            write(i+":        they are orthogonals")
-        ELSE_IF(ps==null) THEN
-            write(i+":        can't find product: arrays have different lengths")
+            write(i+":they are orthogonals")
         ELSE
-            write(i+':        '+ps)
+            write(i+":"+ps)
         END_IF
+    END_IF
     END_FOR
 END
