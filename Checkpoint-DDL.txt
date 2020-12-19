@@ -1,0 +1,32 @@
+CREATE TABLE Customer (
+	Customer_Id VARCHAR(20),
+	Customer_Name VARCHAR(20) NOT NULL ,
+	Customer_Tel Number,
+	PRIMARY KEY (`Customer_Id`)
+);
+
+
+CREATE TABLE Product (
+	Product_Id VARCHAR(20),
+	Product_Name VARCHAR(20) NOT NULL ,
+	Price Number unsigned,
+	PRIMARY KEY (`Customer_Id`)
+);
+
+
+Create TABLE Order (
+	Quantity Number,
+	Total_Amount Number,
+	Product_Id VARCHAR(20)
+	Customer_Id VARCHAR(20)
+	FOREIGN KEY(Product_Id) REFERENCES Product(Product_Id)
+	FOREIGN KEY(Customer_Id) REFERENCES Customer(Customer_Id)
+);
+
+
+ALTER TABLE Order
+ADD Category VARCHAR2(20);
+
+
+ALTER TABLE Product
+ADD Order_Date date default SYSDATE;
